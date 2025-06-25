@@ -1,0 +1,19 @@
+install.packages("ClusterR")
+install.packages("cluster")
+library(ClusterR)
+library(cluster)
+data("iris")
+iris_l<-iris[-5]
+print(iris_l)
+kmeans.r<-kmeans(iris_l,centers = 3,nstart = 20)
+plot(iris_l[,c("Sepal.Length","Sepal.Width")],col=kmeans.r$cluster)
+points(kmeans.r$centers[,c("Sepal.Length","Sepal.Width")],col=1:3,pch=8,cex=3)
+clusplot(iris_l[,c("Sepal.Length","Sepal.Width")],
+         kmeans.r$cluster,
+         labels=2,
+         shade=TRUE,
+         color=TRUE,
+         lines=0,
+         main=paste("iris cluster"),
+         xlab="Sepal length",
+         ylab="Sepal width")
