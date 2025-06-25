@@ -1,0 +1,18 @@
+df_loaded<-read.csv("C:\\Users\\kssum\\OneDrive\\Desktop\\exam_data.csv")
+head(df_loaded)
+plot(df_loaded$hours, df_loaded$score,
+     main = 'Hours Studied vs. Exam Score',
+     xlab = 'Hours Studied', ylab = 'Exam Score')
+boxplot(df_loaded$score,
+        main = 'Boxplot of Exam Scores',
+        ylab = 'Exam Score')
+model <- lm(score ~ hours, data = df_loaded)
+summary(model)
+res <- resid(model)
+fitted_vals <- fitted(model)
+plot(fitted_vals, res,
+     main = 'Residuals vs. Fitted',
+     xlab = 'Fitted Values', ylab = 'Residuals')
+abline(h = 0, col = 'red')
+qqnorm(res, main = 'Normal Q-Q Plot')
+qqline(res, col = 'red')
