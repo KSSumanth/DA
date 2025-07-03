@@ -1,0 +1,11 @@
+View(women)
+x<-women$height
+y<-women$weight
+cor(x,y)
+plot(x,y,xlab="height",ylab="wieght",pch=19,frame=FALSE)
+
+
+x<-c(10,20,30,40,50)
+y<-c(50,40,30,20,10)
+cor(x,y)
+plot(x,y,pch=19,frame=FALSE)
