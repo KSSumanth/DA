@@ -1,0 +1,11 @@
+data("iris")
+logiris<-log(iris[,1:4])
+m<-iris[,5]
+print(m)
+pc<-prcomp(logiris)
+print(pc)
+attributes(pc)
+ndf<-data.frame(pc$x)
+head(ndf)
+attributes(ndf)
+print(ndf$PC1)
