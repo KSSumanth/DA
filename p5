@@ -1,0 +1,25 @@
+data<-data.frame(name=c("bala","ganesh","jeevan"),age=c(43,38,42),edu=c(2.0,4.2,4.1))
+age<-data$age
+edu<-data$edu
+M1<-matrix(c(age,edu),nrow=3)
+print(M1)
+E1<-dist(M1,method = "euclidean")
+print(E1)
+ageD=age/10
+M2<-matrix(c(ageD,edu),nrow=3)
+print(M2)
+E2<-dist(M2,method = "euclidean")
+print(E2)
+rangeA<-max(age)-min(age)
+min_maxA<-(age-min(age))/rangeA
+rangeE<-max(edu)-min(edu)
+min_maxE<-(edu-min(edu))/rangeE
+M3<-matrix(c(min_maxA,min_maxE),nrow = 3)
+print(M3)
+E3<-dist(M3,method = "euclidean")
+print(E3)
+
+print("different values")
+print(E1)
+print(E2)
+print(E3)
