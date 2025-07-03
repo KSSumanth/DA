@@ -1,0 +1,16 @@
+View(mtcars)
+x<-mtcars$wt
+y<-mtcars$disp
+cor(x,y)
+plot(x,y,xlab = "weight",ylab = "dislacement",pch=19,frame=FALSE)
+
+
+
+View(mtcars)
+x<-mtcars$wt
+y<-mtcars$mpg
+cor(x,y)
+cor(x,y,method = "pearson")
+cor(x,y,method = "spearman")
+cor(x,y,method = "kendall")
+plot(x,y,xlab = "weight",ylab = "mpg",pch=19,frame=FALSE)
